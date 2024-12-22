@@ -187,7 +187,7 @@ void handleCollisions(GameState* state){
         }
 
         if(SDL_HasIntersection(&player->collider, &demon.collider)){
-            player->health -= 1000;//(int)demon.evil * 0.1; 
+            player->health -= 10;//(int)demon.evil * 0.1; 
         }
 
     }
