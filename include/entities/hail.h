@@ -3,6 +3,7 @@
 #include "../structures/vec2.h"
 #include <SDL.h>
 #include <stdbool.h>
+#include <SDL_mixer.h>
 
 typedef struct Hail{
     Vec2 velocity;
@@ -10,6 +11,7 @@ typedef struct Hail{
 
     SDL_Rect sprite;
     SDL_Rect collider;
+    Mix_Chunk* sound;
 
     bool flip;
 

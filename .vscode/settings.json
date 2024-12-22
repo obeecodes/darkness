@@ -21,6 +21,7 @@
         "sprite.h": "c",
         "vec2.h": "c",
         "input.h": "c",
-        "globals.h": "c"
+        "globals.h": "c",
+        "sdl_mixer.h": "c"
     }
 }

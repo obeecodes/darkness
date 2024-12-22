@@ -2,7 +2,7 @@
 
 #include "../structures/vec2.h"
 #include <stdbool.h>
-
+#include <SDL_mixer.h>
 #include <SDL.h>
 
 typedef enum {
@@ -21,6 +21,7 @@ typedef struct Demon {
 
     SDL_Rect sprite;
 
+    Mix_Chunk* sound;
     SDL_Rect collider;
     bool alive;
 

@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_mixer.h>
 
 void menuStateUpdate(GameState* state){
     SDL_Rect viewport;
@@ -188,6 +189,8 @@ void handleCollisions(GameState* state){
 
         if(SDL_HasIntersection(&player->collider, &demon.collider)){
             player->health -= 10;//(int)demon.evil * 0.1; 
+            Mix_PlayChannel(-1, player->sound, 0);
+
         }
 
     }
@@ -205,6 +208,8 @@ void handleCollisions(GameState* state){
             if(SDL_HasIntersection(&state->fires[f].collider, &demon.collider)){
                 demon.health -= 20;
                 demon.status = BURN;
+                Mix_PlayChannel(-1, demon.sound, 0);
+
 
                 //effectively remove collider on hit
                 state->fires[f].collider.x = 0;
@@ -221,6 +226,7 @@ void handleCollisions(GameState* state){
             if(SDL_HasIntersection(&state->hails[h].collider, &demon.collider)){
                 demon.health -= 20;
                 demon.status = FROST;
+                Mix_PlayChannel(-1, demon.sound, 0);
 
                 //effectively remove collider on hit
                 state->hails[h].collider.x = 0;

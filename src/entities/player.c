@@ -7,6 +7,7 @@ Player* createPlayer() {
     player->maxHealth = 10000;
     player->health = 10000;
     player->faith = 50;
+    player->sound = Mix_LoadWAV("assets/sounds/hit.wav");
 
     player->position = (Vec2){16 * 5, 0.0f};
     player->velocity = (Vec2){0.0f, 0.0f};

@@ -4,7 +4,8 @@ Hail createHail(Vec2 playerPos, bool dir){
     Hail hail;
     hail.position.x = playerPos.x;
     hail.position.y = playerPos.y - 6;
-
+    hail.sound = Mix_LoadWAV("assets/sounds/ice.wav");
+    Mix_PlayChannel(-1, hail.sound, 0);
     Vec2 front = playerPos;
 
     int dx;

@@ -3,7 +3,7 @@
 #include "../structures/vec2.h"
 #include <SDL.h>
 #include <stdbool.h>
-
+#include <SDL_mixer.h>
 typedef enum {
     IDLE,
     RUNNING,
@@ -22,6 +22,7 @@ typedef struct Player{
     Vec2 acceleration;
 
     SDL_Rect sprite;
+    Mix_Chunk* sound;
 
     PlayerState state;
 

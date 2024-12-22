@@ -7,6 +7,7 @@ Demon createDemon(){
     Demon demon;// = (Demon*)malloc(sizeof(Demon));
     demon.alive = true;
     demon.status = NORMAL;
+    demon.sound = Mix_LoadWAV("assets/sounds/demon.wav");
 
     demon.health = 100;
     demon.evil = 50;

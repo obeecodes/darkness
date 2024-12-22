@@ -4,6 +4,8 @@ Fire createFire(Vec2 playerPos, bool dir){
     Fire fire;
     fire.position.x = playerPos.x;
     fire.position.y = playerPos.y - 6;
+    fire.sound = Mix_LoadWAV("assets/sounds/fireball.wav");
+    Mix_PlayChannel(-1, fire.sound, 0);
 
     Vec2 front = playerPos;
 

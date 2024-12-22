@@ -3,6 +3,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
+
 #include "../include/core/window.h"
 #include "../include/core/renderer.h"
 #include "../include/structures/stack.h"
@@ -19,12 +21,21 @@ int main(){
     float accumulatedSeconds = 0.0f;
     float cycleTime = 1.0f / 60.0f;
 
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) != 0) {
         fprintf(stderr, "SDL_Init Error: %s\n", SDL_GetError());
+        SDL_Quit();
         exit(EXIT_FAILURE);
     }
     if (TTF_Init() == -1) {
         SDL_Log("SDL_ttf could not initialize! TTF_Error: %s", TTF_GetError());
+        SDL_Quit();
+        exit(EXIT_FAILURE);
+    }
+
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+        printf("Mix_OpenAudio Error: %s\n", Mix_GetError());
+        SDL_Quit();
         exit(EXIT_FAILURE);
     }
 
