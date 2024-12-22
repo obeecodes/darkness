@@ -19,3 +19,5 @@ very unstructured mini-game made in C using SDL2
 
 ### Game Over
 ![Game Over](images/game%20over.png)
+
+[Watch short gameplay](videos/short.mov)
