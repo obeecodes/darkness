@@ -1,0 +1,14 @@
+# CMake build directory
+build/
+
+# Object files and executables
+*.o
+*.obj
+*.exe
+*.out
+
+# Logs
+*.log
+
+# macOS specific files
+.DS_Store
